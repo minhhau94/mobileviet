@@ -1,6 +1,6 @@
 /* global */
-html, 
-body{
+html,
+body {
     font-family: 'Montserrat', sans-serif;
 }
 
@@ -9,131 +9,314 @@ body{
     padding: 0;
     box-sizing: border-box;
 }
-.container{
+
+.container {
     width: 90%;
     margin: auto;
     padding: 0;
 }
+
 /* top header */
-.top-header{
+.top-header {
     font-size: 12px;
     color: #fff;
     background-color: rgba(0, 0, 0, 0.905);
     padding: 10px 0;
 }
-.top-header i{
+
+.top-header i {
     color: #D10024;
     padding-right: 7px;
 }
-.top-header .col__left span{
+
+.top-header .col__left span {
     padding-right: 15px;
 }
 
 /* header */
-.header{
+.header {
     background-color: black;
-    padding: 20px 0;    
+    padding: 20px 0;
 }
-.header .logo{
+
+.header .logo {
     display: flex;
     align-items: center;
 }
-.header .logo img{
+
+.header .logo img {
     width: 40px;
 }
+
 .header .form {
     display: inline;
 }
-.header .container .header__bottom{
+
+.header .container .header__bottom {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.header a{
+
+.header a {
     text-decoration: none;
 }
-.header .text1{
+
+.header .text1 {
     color: #fff;
     font-weight: 700;
     font-size: 35px;
     padding-left: 5px;
 }
-.header .text2{
+
+.header .text2 {
     color: rgba(255, 255, 255, 0.596);
     font-weight: 700;
     font-size: 20px;
 }
-.header .input{
-    width: 400px;    
+
+.header .input {
+    width: 400px;
     padding: 5px 20px;
     border-radius: 20px 0 0 20px;
 }
-.header .search-btn{
+
+.header .search-btn {
     background-color: #D10024;
     font-size: 25px;
     color: #fff;
     width: 60px;
     height: 60px;
-    border-radius: 50%;    
+    border-radius: 50%;
     transform: translateX(-30px);
     border: 1px solid transparent;
 }
-.header .addcard{
+
+.header .addcard {
     color: #fff;
     background-color: transparent;
     font-size: 15px;
 }
+
 .fa-cart-shopping {
     font-size: 20px;
     padding-right: 5px;
 }
 
 /* navbar */
-.navbar{
+.navbar {
     padding: 15px 0;
     box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.443);
     border-top: 5px solid #D10024;
 }
-.navbar a{
+
+.navbar a {
     display: flex;
     text-decoration: none;
     align-items: center;
 }
-.navbar i{
+
+.navbar i {
     padding-right: 5px;
     font-size: 25px;
 }
+
 .navbar .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 10px 0;
 }
-.navbar a{
+
+.navbar a {
     color: #000;
 }
-/* Slider */
+
 /* collection */
-.collection{
+.collection {
     padding: 30px 0;
 }
-.collection .container{
+
+.collection .container {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.collection .shop img{
+
+.shop {
+    position: relative;
+    overflow: hidden;
+    border: 2px solid red;
+    border-radius: 20px 0 0 0;
+    box-shadow: 0 5px 10px #696969;
+}
+
+.collection .shop img {
     width: 100%;
     background-size: cover;
     background-position: center center;
+    transition: all 1s linear 0s;
 }
-.collection .select button{
-    width: 50px;
+
+.collection .shop img:hover {
+    /* transform: scale(1.2, 1.2); */
+}
+
+.shop .shop-body a{
+    color: #fff;
+    font-weight: 700;
+    font-size: 24px;
+    cursor: pointer;
+}
+.shop-body {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    z-index: 10;
+}
+.shop::before {
+    content: "";
+    position: absolute;
+    top: 0px;
+    bottom: 0px;
+    left: 0px;
+    width: 80%;
+    opacity: 0.8;
+    transform: skewX(-45deg) translateX(-150px);
+    background: rgb(209, 0, 36);
+}
+.shop-body span,
+.shop-body i{
+    font-size: 15px;
+}
+/* product */
+.product {
+    background-color: rgba(147, 107, 232, 0.05);
+    ;
+}
+
+.product .title h6 {
+    font-size: 24px;
+    font-weight: 700;
+    color: rgb(43, 45, 66);
+}
+
+.product .title button {
     text-overflow: clip;
-    border-radius: 5px;
-    height: fit-content;
+    padding: 2px;
+    width: 70px;
+    text-align: center;
     background-color: #fff;
+    border: 2px solid #696969;
+    border-radius: 10px;
 }
-.collection .select img{
+
+.product .title button:first-child {
+    margin-right: 5px;
+}
+
+.product .title img {
     width: 100%;
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+}
+
+.product blockquote q {
+    font-size: 1.2em;
+    line-height: 26px;
+    font-weight: 400;
+    margin-bottom: 1.5em;
+    color: #696969;
+}
+
+.product blockquote q::before {
+    font-size: 50px;
+    color: #189a46;
+    line-height: 0.8;
+    padding-top: 8px;
+    font-weight: 600;
+    display: inline-block;
+    font-family: "Merriweather", serif;
+}
+
+.product blockquote {
+    margin-bottom: 1.5rem;
+}
+
+.product .testi-des {
+    display: flex;
+    align-items: center;
+}
+
+.product .test-img {
+    width: 70px;
+    height: 70px;
+    display: inline-block;
+    overflow: hidden;
+    border-radius: 50%;
+    object-fit: cover;
+    position: center;
+    object-position: center;
+    margin-right: 20px;
+}
+
+.product .w3l-clients .testimonial .peopl {
+    margin: 0;
+    margin-left: 20px;
+    text-align: left;
+}
+
+.product .peopl h3 {
+    margin: 0;
+    font-weight: 600;
+    font-size: 20px;
+}
+
+.product p.indentity {
+    color: #777;
+    font-size: 17px;
+    font-style: normal;
+    margin-bottom: 0;
+    text-align: left;
+    opacity: 0.8;
+}
+
+.product .carousel-inner .carousel-item {
+    height: 400px;
+}
+
+.product .product-content {
+    margin-bottom: 50px;
+    margin-right: 20px;
+}
+
+.product .product__item {
+    display: block;
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    text-align: left;
+    box-shadow: 0 25px 98px 0 rgb(19 19 19 / 3%);
+}
+
+.product .carousel-caption {
+    display: flex;
+    position: absolute;
+    right: 0;
+    left: 0;
+}
+
+.product .carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.product .product__top img{
+    padding: 20px;
+    width: 70%;
+    background-size: cover;
+    background-position: center center;
+
 }
