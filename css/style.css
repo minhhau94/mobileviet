@@ -1,0 +1,139 @@
+/* global */
+html, 
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.container{
+    width: 90%;
+    margin: auto;
+    padding: 0;
+}
+/* top header */
+.top-header{
+    font-size: 12px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.905);
+    padding: 10px 0;
+}
+.top-header i{
+    color: #D10024;
+    padding-right: 7px;
+}
+.top-header .col__left span{
+    padding-right: 15px;
+}
+
+/* header */
+.header{
+    background-color: black;
+    padding: 20px 0;    
+}
+.header .logo{
+    display: flex;
+    align-items: center;
+}
+.header .logo img{
+    width: 40px;
+}
+.header .form {
+    display: inline;
+}
+.header .container .header__bottom{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header a{
+    text-decoration: none;
+}
+.header .text1{
+    color: #fff;
+    font-weight: 700;
+    font-size: 35px;
+    padding-left: 5px;
+}
+.header .text2{
+    color: rgba(255, 255, 255, 0.596);
+    font-weight: 700;
+    font-size: 20px;
+}
+.header .input{
+    width: 400px;    
+    padding: 5px 20px;
+    border-radius: 20px 0 0 20px;
+}
+.header .search-btn{
+    background-color: #D10024;
+    font-size: 25px;
+    color: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;    
+    transform: translateX(-30px);
+    border: 1px solid transparent;
+}
+.header .addcard{
+    color: #fff;
+    background-color: transparent;
+    font-size: 15px;
+}
+.fa-cart-shopping {
+    font-size: 20px;
+    padding-right: 5px;
+}
+
+/* navbar */
+.navbar{
+    padding: 15px 0;
+    box-shadow: 0 0 20px 2px rgba(0, 0, 0, 0.443);
+    border-top: 5px solid #D10024;
+}
+.navbar a{
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+}
+.navbar i{
+    padding-right: 5px;
+    font-size: 25px;
+}
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+.navbar a{
+    color: #000;
+}
+/* Slider */
+/* collection */
+.collection{
+    padding: 30px 0;
+}
+.collection .container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.collection .shop img{
+    width: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+.collection .select button{
+    width: 50px;
+    text-overflow: clip;
+    border-radius: 5px;
+    height: fit-content;
+    background-color: #fff;
+}
+.collection .select img{
+    width: 100%;
+}
