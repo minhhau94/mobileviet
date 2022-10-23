@@ -82,60 +82,60 @@
             <div class="row">
                 <div class="col">
                     <div class="item">
-                        <div class="item__top">
+                        <div class="item-top">
                             <img src="./img/iphone.jpg" alt="">
                         </div>
-                        <div class="item__bottom">
+                        <div class="item-bottom">
                             <a href="">Smart Phone</a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="item">
-                        <div class="item__top">
+                        <div class="item-top">
                             <img src="./img/ipad.jpeg" alt="">
                         </div>
-                        <div class="item__bottom">
+                        <div class="item-bottom">
                             <a href="">Tablet</a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="item">
-                        <div class="item__top">
+                        <div class="item-top">
                             <img src="./img/laptop.jpg" alt="">
                         </div>
-                        <div class="item__bottom">
+                        <div class="item-bottom">
                             <a href="">Laptop</a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="item">
-                        <div class="item__top">
+                        <div class="item-top">
                             <img src="./img/applewatch.jpg" alt="">
                         </div>
-                        <div class="item__bottom">
+                        <div class="item-bottom">
                             <a href="">Smartwatch</a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="item">
-                        <div class="item__top">
+                        <div class="item-top">
                             <img src="./img/airpods.jpg" alt="">
                         </div>
-                        <div class="item__bottom">
+                        <div class="item-bottom">
                             <a href="">Accessories</a>
                         </div>
                     </div>
                 </div>
                 <div class="col">
                     <div class="item">
-                        <div class="item__top">
+                        <div class="item-top">
                             <img src="./img/macfamily.png" alt="">
                         </div>
-                        <div class="item__bottom">
+                        <div class="item-bottom">
                             <a href="">Mac Family</a>
                         </div>
                     </div>
@@ -146,34 +146,35 @@
 
     <!-- product -->
     <section class="product">
-        <header class="title">
+        <header class="product-title">
             <div class="container">
                 <h2>sản phẩm nổi bật</h2>
-                <button><img src="./img/logo-iphone.jpg" alt=""></button>
-                <button><img src="./img/logo-samsung.jpg" alt=""></button>
+                <button><img src="https://cdn.tgdd.vn/Brand/1/logo-iphone-220x48.png" alt=""></button>
+                <button><img src="https://cdn.tgdd.vn/Brand/1/samsungnew-220x48-1.png" alt=""></button>
             </div>
         </header>
-        <maim class="main">
+        <maim class="product-main">
             <div class="container">
-                <div class="row">
-                    <div class="col">
+                <div class="row" id="productRow">
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                    <!-- <div class="col">
                         <div class="item">
-                            <div class="item__top">
+                            <div class="item-top">
                                 <div class="image">
-                                    <img src="https://cdn.tgdd.vn/Products/Images/42/251192/iphone-14-pro-max-tim-thumb-600x600.jpg"
+                                    <img id="productImg" src=""
                                         alt="">
                                 </div>
-                                <div class="item__info">
-                                    <span>Cấu hình</span>
-                                    <ul>
-                                        <li>Kích thước màn hình:</li>
-                                        <li>Camera sau:</li>
-                                        <li>Camera trước</li>
-                                        <li>Dung lượng Pin:</li>
-                                    </ul>
-                                    <h6>Slogan</h6>
+                                <div class="item-info">
+                                    <h5>Cấu hình</h5>
+                                    <p</p>
                                     <div class="add-to-cart">
-                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to
+                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>add to
                                             cart</button>
                                     </div>
                                 </div>
@@ -183,11 +184,9 @@
                                 <p>Giá:</p>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                 </div>
-
             </div>
-
         </maim>
     </section>
 
@@ -202,7 +201,8 @@
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor
                                 incididunt ut.</p>
                             <ul class="footer__links">
-                                <li><a href="#"><i class="fa-solid fa-location-dot"></i>523 Lê Đức Thọ, P.16, GV, HCM</a></li>
+                                <li><a href="#"><i class="fa-solid fa-location-dot"></i>523 Lê Đức Thọ, P.16, GV,
+                                        HCM</a></li>
                                 <li><a href="#"><i class="fa-solid fa-phone"></i>+021-95-51-84</a></li>
                                 <li><a href="#"><i class="fa-solid fa-envelope"></i>mobileviet@gmail.com</a></li>
                             </ul>
@@ -264,8 +264,12 @@
         crossorigin="anonymous"></script>
 
     <!-- javascript -->
-    <script src="js/slick.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"
+        integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+    <script src="model/product.js"></script>
+    <script src="js/index.js"></script>
 </body>
 
 </html>
