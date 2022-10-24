@@ -56,7 +56,7 @@
                     <input class="input" placeholder="Bạn muốn tìm gì...">
                     <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
-                <a href="" class="addcard"><i class="fa-solid fa-cart-shopping"></i><span>Giỏ hàng</span></a>
+                <a href="" class="addcart"><i class="fa-solid fa-cart-shopping"></i><span>Giỏ hàng</span></a>
             </div>
         </div>
     </header>
@@ -153,41 +153,64 @@
                 <button><img src="https://cdn.tgdd.vn/Brand/1/samsungnew-220x48-1.png" alt=""></button>
             </div>
         </header>
-        <maim class="product-main">
+        <main class="product-main">
             <div class="container">
-                <div class="row" id="productRow">
-                    <ul>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                        <li></li>
-                    </ul>
-                    <!-- <div class="col">
-                        <div class="item">
-                            <div class="item-top">
-                                <div class="image">
-                                    <img id="productImg" src=""
+                <div class="row" id="productRow"></div>
+            </div>
+        </main>
+        <div class="cart">
+            <div class="cart-container">
+                <h2>Giỏ hàng</h2>
+                <div class="cart-top">                    
+                    <div class="cart-row">
+                        <div class="cart-col">
+                            <div class="cart-item">
+                                <div class="cart-image">
+                                    <img src="	https://cdn.tgdd.vn/Products/Images/42/246195/samsung-galaxy-a73-5g-xanh-thumb-600x600.jpg"
                                         alt="">
+                                    <span>Samsung</span>
                                 </div>
-                                <div class="item-info">
-                                    <h5>Cấu hình</h5>
-                                    <p</p>
-                                    <div class="add-to-cart">
-                                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i>add to
-                                            cart</button>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="item__bottom">
-                                <a href="#">iPhone 14 Pro Max 128GB</a>
-                                <p>Giá:</p>
                             </div>
                         </div>
-                    </div> -->
+                        <div class="cart-col">
+                            <div class="cart-item">
+                                <div class="cart-price">
+                                    <span>12000000 đ</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-col">
+                            <div class="cart-item">
+                                <div class="cart-qty">
+                                    <input type="number" min="0">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-col">
+                            <div class="cart-item">
+                                <div class="cart-fina-price">
+                                    <p>12000000 đ</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="cart-col">
+                            <div class="cart-item">
+                                <div class="cart-delete">
+                                    <button><i class="fa-solid fa-trash-can"></i></button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+                <div class="cart-bottom">
+                    <div class="cart-total">
+                        <p>Tổng thanh toán (2 Sản phẩm): <span>120000 đ</span></p>
+                        <button>Mua hàng <i class="fa-solid fa-angles-right"></i></button>
+                    </div>
+                </div>
+                <button class="btn-exit"><i class="fa-solid fa-square-xmark"></i></button>
             </div>
-        </maim>
+        </div>
     </section>
 
     <!-- footer -->

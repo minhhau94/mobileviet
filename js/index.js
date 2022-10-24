@@ -24,14 +24,16 @@ const renderProduct = (data) => {
                         <li>Pin ${currentProduct.battery}</li>                        
                     </ul>
                     <p>${currentProduct.describe}</p>
-                    <div class="add-to-cart">
-                        <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> add to cart</button>
-                    </div>
+                    
                 </div>
             </div>
             <div class="item-bottom">
                 <a href="#">${currentProduct.name}</a>
-                <p>Giá: ${currentProduct.price}</p>
+                <p>Giá: ${currentProduct.price} đ</p>
+                <div class="add-to-cart">
+                    <input type="number" min="0">
+                    <button class="add-to-cart-btn"><i class="fa fa-shopping-cart"></i> đặt hàng</button>
+                </div>
             </div>
         </div>
     </div>`;  
