@@ -49,14 +49,13 @@
         <div class="container">
             <div class="header__bottom">
                 <div class="logo">
-                    <img src="./img/logo.png" alt="">
-                    <a href="/index.html"><span class="text1">Mobile</span><span class="text2">viet.vn</span></a>
+                    <a href="/idex.htmln"><img src="./img/logo.png" alt=""><p><span class="text1">Mobile</span><span class="text2">viet.vn</span></p></a>
                 </div>
                 <form class="form">
                     <input class="input" placeholder="Bạn muốn tìm gì...">
                     <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
-                <a href="" class="addcart"><i class="fa-solid fa-cart-shopping"></i><span>Giỏ hàng</span></a>
+                <a class="addcart" href="./cart.html"><i class="fa-solid fa-cart-shopping"></i><span>Giỏ hàng</span></a>
             </div>
         </div>
     </header>
@@ -72,9 +71,6 @@
             <a href="#"><i class="fa-solid fa-newspaper"></i><span>Tin Công Nghệ</span></a>
         </div>
     </nav>
-
-    <!-- carousel -->
-
 
     <!-- colection -->
     <section class="select">
@@ -158,60 +154,9 @@
                 <div class="row" id="productRow"></div>
             </div>
         </main>
-        <div class="cart">
-            <div class="cart-container">
-                <h2>Giỏ hàng</h2>
-                <div class="cart-top">                    
-                    <div class="cart-row">
-                        <div class="cart-col">
-                            <div class="cart-item">
-                                <div class="cart-image">
-                                    <img src="	https://cdn.tgdd.vn/Products/Images/42/246195/samsung-galaxy-a73-5g-xanh-thumb-600x600.jpg"
-                                        alt="">
-                                    <span>Samsung</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cart-col">
-                            <div class="cart-item">
-                                <div class="cart-price">
-                                    <span>12000000 đ</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cart-col">
-                            <div class="cart-item">
-                                <div class="cart-qty">
-                                    <input type="number" min="0">
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cart-col">
-                            <div class="cart-item">
-                                <div class="cart-fina-price">
-                                    <p>12000000 đ</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="cart-col">
-                            <div class="cart-item">
-                                <div class="cart-delete">
-                                    <button><i class="fa-solid fa-trash-can"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="cart-bottom">
-                    <div class="cart-total">
-                        <p>Tổng thanh toán (2 Sản phẩm): <span>120000 đ</span></p>
-                        <button>Mua hàng <i class="fa-solid fa-angles-right"></i></button>
-                    </div>
-                </div>
-                <button class="btn-exit"><i class="fa-solid fa-square-xmark"></i></button>
-            </div>
-        </div>
     </section>
+
+    
 
     <!-- footer -->
     <footer class="footer">
@@ -284,15 +229,19 @@
     <!-- bootstrap js -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
-        crossorigin="anonymous"></script>
+        crossorigin="anonymous">
+    </script>
 
     <!-- javascript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.1.3/axios.min.js"
         integrity="sha512-0qU9M9jfqPw6FKkPafM3gy2CBAvUWnYVOfNPDYKVuRTel1PrciTj+a9P3loJB+j0QmN2Y0JYQmkBBS8W+mbezg=="
-        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </script>
 
-    <script src="model/product.js"></script>
-    <script src="js/index.js"></script>
+    <script src="/model/product.js"></script>
+    <script src="/model/cart.js"></script>
+
+    <script src="/js/productList.js"></script>
 </body>
 
 </html>
