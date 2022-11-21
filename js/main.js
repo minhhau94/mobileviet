@@ -31,7 +31,7 @@ const renderProduct = (data) => {
                 <a href="#">${currentProduct.name}</a>
                 <p>Giá: ${currentProduct.price}<sup>đ</sup></p>
                 <div class="add-to-cart">
-                    <button class="add-to-cart-btn" id="addToCartBtn" onclick="addToCart(${currentProduct.id})" ><i class="fa fa-shopping-cart"></i> đặt hàng</button>
+                    <button class="add-to-cart-btn" id="addToCartBtn" onclick="addToCart(${currentProduct.id})" ><i class="fa fa-shopping-cart"></i>đặt hàng</button>
                 </div>
             </div>
         </div>
@@ -54,6 +54,7 @@ const getProductList = async () => {
     } catch (error) {
         console.log(error);
     };
+    console.log(productList)
 }
 
 const mapData = (dataFromAPI) => {
@@ -76,109 +77,81 @@ const mapData = (dataFromAPI) => {
         );
         result.push(newProduct);
     }
+
     return result;
 }
+
 
 window.onload = () => {
     console.log("window load");
     getProductList();
-    getCartItemList();
 };
 
 // GIỎ HÀNG
 let cartItemList = [];
 
+const addToCart = (id) => {
+    for (let i = 0; i < productList.length; i++) {
+        let newCartItem = productList[i];
+        let quantity = "1";
+        if (id == newCartItem.id) {
+            let cartIem = new CartItem(
+                newCartItem.id,
+                newCartItem.name,
+                newCartItem.price,
+                newCartItem.img,
+                +quantity,
+            )
+            // kiểm trả trong giỏ hàng đã có sản phẩm đó chưa
+            let test = 0
+            for (let i in cartItemList) {
+                if (cartItemList[i].id == id) {
+                    cartItemList[i].quantity++;
+                    test = 1
+                    break;
+                }
+            }
+            if (test == 0) {
+                cartItemList.push(cartIem);
+            }            
+            console.log(cartIem);
+        }
+    }
+    renderCartItemList(cartItemList);
+}
+
 const renderCartItemList = (data) => {
-    if (!data) data = cartItemList;
-    var cartItemHTML = "";     
+    var cartItemHTML = "";
 
     for (let i = 0; i < data.length; i++) {
         let currentCartItem = data[i];
         cartItemHTML += `<tr>
-                    <td><img src="${currentCartItem.img}"><span>${currentCartItem.productName}</span></td>
+                    <td><img src="${currentCartItem.img}"><span>${currentCartItem.name}</span></td>
                     <td><span>${currentCartItem.price}</span><sup>đ</sup></td>
-                    <td><input type="number" value="1" min="1"></td>
-                    <td><span>${currentCartItem.calcPrice()}</span><sup>đ</sup></td>
-                    <td><button><i class="fa-solid fa-trash-can"></i></button></td>
+                    <td><span>${currentCartItem.quantity}</span></td>
+                    <td><span>${currentCartItem.price * currentCartItem.quantity}</span><sup>đ</sup></td>
+                    <td><button onclick="deleteCartItem(${currentCartItem.id})"><i class="fa-solid fa-trash-can"></i></button></td>
                 </tr>`;
     };
     document.getElementById("tbodyCart").innerHTML = cartItemHTML;
 }
 
-const getCartItemList = async () => {
-    try {
-        const res = await axios({
-            url: "https://6355725b483f5d2df3b4a6ce.mockapi.io/api/products/cart",
-            method: "GET",
-        });
-
-        cartItemList = mapCartData(res.data);
-        renderCartItemList(cartItemList);
-        console.log("done");
-    } catch (error) {
-        console.log(error);
-    };
+const showCart = () => {
+    document.getElementById("cart").classList.toggle("hiddenCart")
 }
 
-const mapCartData = (dataFromAPI) => {
-    let result = [];
-
-    for (var i = 0; i < dataFromAPI.length; i++) {
-        let oldCartItem = dataFromAPI[i];
-        let newCartItem = new CartItem(
-            oldCartItem.id,
-            oldCartItem.productName,
-            oldCartItem.price,
-            oldCartItem.img,
-            oldCartItem.quantity,
-        );
-        result.push(newCartItem);
-    }
-    return result;
-}
-
-function createCartItem(id) {
-    var newCartItem = new Object();
-
-
-    for (let i = 0; i < productList.length; i++) {
-
-        if (id == productList[i].id) {
-            newCartItem.id = productList[i].id;
-            newCartItem.productName = productList[i].name;
-            newCartItem.price = productList[i].price;
-            newCartItem.img = productList[i].img;
-        }
-    }
-    axios({
-        url: "https://6355725b483f5d2df3b4a6ce.mockapi.io/api/products/cart",
-        method: "POST",
-        data: newCartItem,
-    }).then(function (res) {
-        console.log(res);
-    }).catch(function (error) {
-        console.log(error);
-    });
-    renderCartItemList(newCartItem);
+const deleteCartItem = (id) => {
+    let index = findCartItemId(id);
+    cartItemList.splice(index, 1);
+    renderCartItemList(cartItemList);
     
 }
 
-function addToCart(id) {
-    alert("đưa vào giỏ hàng sp có id là" + id);
-
-    let existCartItemList = false;
-
-    for (let i = 0; i < cartItemList.length; i++) {
-        // nếu tồn tại thì tăng số lượng
-        if (id == cartItemList[i].id) {
-            cartItemList[i].quantity++;
-            return
-        }
-    };
-    // nếu không tồn tại => tạo đối tượng mới
-    if (existCartItemList == false) {
-        createCartItem(id);
-        // let cartItem = createCartItem(id);
-        // cartItemList.push(cartItem);
-    };    
-}
+function findCartItemId(id) {
+    for (var i = 0; i < cartItemList.length; i++) {
+      if (cartItemList[i].id === id) {
+        return i;
+      }
+    }  
+    return -1;
+  }

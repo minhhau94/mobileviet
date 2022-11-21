@@ -55,7 +55,7 @@
                     <input class="input" placeholder="Bạn muốn tìm gì...">
                     <button class="search-btn"><i class="fa-solid fa-magnifying-glass"></i></button>
                 </form>
-                <a class="addcart" href="./cart.html"><i class="fa-solid fa-cart-shopping"></i><span>Giỏ hàng</span></a>
+                <a class="addcart" onclick="showCart()"><i class="fa-solid fa-cart-shopping"></i><span>Giỏ hàng</span></a>
             </div>
         </div>
     </header>
@@ -156,7 +156,35 @@
         </main>
     </section>
 
-    
+
+    <!-- Cart -->
+    <section class="cart hiddenCart" id="cart">
+        <div class="container">
+            <div class="tittle">
+                <a href="/idex.html"><img src="./img/logo.png" alt=""><p><span class="text1">Mobile</span><span class="text2">viet.vn</span></p></a>
+                <h2>Giỏ hàng</h2>
+                <button onclick="showCart()">X</button>
+            </div>        
+            <form action="">
+                <table class="table">
+                    <thead class="table-header">
+                        <tr>
+                            <th>Sản Phẩm</th>
+                            <th>Đơn giá</th>
+                            <th>Số lượng</th>
+                            <th>Số tiền</th>
+                            <th>Xóa</th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-body" id="tbodyCart">
+                    </tbody>
+                </table>
+                <div class="price-total">
+                    <p>Tổng tiền: <span>12000000</span><sup>đ</sup></p>
+                </div>
+            </form>
+        </div>        
+    </section>
 
     <!-- footer -->
     <footer class="footer">
@@ -240,8 +268,7 @@
 
     <script src="/model/product.js"></script>
     <script src="/model/cart.js"></script>
-
-    <script src="/js/productList.js"></script>
+    <script src="/js/main.js"></script>
 </body>
 
 </html>
