@@ -122,19 +122,25 @@ const addToCart = (id) => {
 
 const renderCartItemList = (data) => {
     var cartItemHTML = "";
+    let totalPrice = 0;
 
     for (let i = 0; i < data.length; i++) {
         let currentCartItem = data[i];
+        let price = currentCartItem.price * currentCartItem.quantity;
+        totalPrice += price;
         cartItemHTML += `<tr>
                     <td><img src="${currentCartItem.img}"><span>${currentCartItem.name}</span></td>
                     <td><span>${currentCartItem.price}</span><sup>đ</sup></td>
                     <td><span>${currentCartItem.quantity}</span></td>
-                    <td><span>${currentCartItem.price * currentCartItem.quantity}</span><sup>đ</sup></td>
+                    <td><span>${price}</span><sup>đ</sup></td>
                     <td><button onclick="deleteCartItem(${currentCartItem.id})"><i class="fa-solid fa-trash-can"></i></button></td>
-                </tr>`;
+                </tr>`;       
     };
+    
+    document.getElementById("amount").innerHTML = totalPrice;
     document.getElementById("tbodyCart").innerHTML = cartItemHTML;
 }
+
 
 const showCart = () => {
     document.getElementById("cart").classList.toggle("hiddenCart")
